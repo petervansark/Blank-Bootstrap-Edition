@@ -4,11 +4,13 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
 ?><!doctype html>
 
-<html lang="<?php echo $this->language; ?>">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="YES" />
 
 <head>
 	<jdoc:include type="head" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1.0, user-scalable=1" />
 	<link rel="apple-touch-icon-precomposed" href="<?php echo $tpath; ?>/images/apple-touch-icon-57x57-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $tpath; ?>/images/apple-touch-icon-72x72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $tpath; ?>/images/apple-touch-icon-114x114-precomposed.png">
@@ -18,15 +20,17 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<script type="text/javascript" src="<?php echo $tpath; ?>/js/respond.min.js"></script>
 	<![endif]-->
+
+	<!-- Add Less -->
+	<link rel="stylesheet/less" type="text/css" href="<?php echo $tpath; ?>/css/template.less" />
+	<script src="<?php echo $tpath; ?>/js/less.min.js" type="text/javascript"></script>
+
 </head>
   
 <body class="<?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('site')).' '.$active->alias.' '.$pageclass; ?>" role="document">
 
-	<?php require_once 'html/bootstrap.test.php'; // test only - delete this line ?>
-
-	<!-- 
-		YOUR CODE HERE
-	-->
+		<jdoc:include type="message" />
+		<jdoc:include type="component" />
 
 	<jdoc:include type="modules" name="debug" />
 </body>

@@ -27,4 +27,4 @@ if ($templateparams->get('runless', 1) == 1)
 	require 'runless.php';
 }
 
-$doc->addStyleSheet($tpath.'/css/template.css');
+//$doc->addStyleSheet($tpath.'/css/template.css');
