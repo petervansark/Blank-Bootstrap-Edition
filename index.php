@@ -40,11 +40,15 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 		</div> <!-- end row -->
 
 		<div class="row">
-			<article class="col-md-8">
+			<article <?php if ($this->countModules('right')) : ?> class="col-md-8" <?php elseif (!$this->countModules('right')) :  ?> class="col-md-12" <?php endif; ?> >
 				<jdoc:include type="message" />
 				<jdoc:include type="component" />
 			</article>
-			<aside class="col-md-4"><jdoc:include type="modules" name="right" style="xhtml" /></aside>
+			<?php if ($this->countModules('right')) : ?>
+				<aside class="col-md-4">
+					<jdoc:include type="modules" name="right" style="xhtml" />
+				</aside>
+			<?php endif; ?>
 		</div> <!-- end row -->
 
 		<div class="row">
