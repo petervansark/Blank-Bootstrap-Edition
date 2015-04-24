@@ -21,9 +21,18 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 	<script type="text/javascript" src="<?php echo $tpath; ?>/js/respond.min.js"></script>
 	<![endif]-->
 
-	<!-- Add Less.js -->
+	<!-- Add Less.js ===> REMOVE AFTER DEVELOPMENT -->
+	<script>
+	  less = {
+	    env: "development", // change to "production" for caching
+	    logLevel: 1,
+	    dumpLineNumbers: "comments",
+		errorReporting: "console"
+		};
+	</script>
 	<link rel="stylesheet/less" type="text/css" href="<?php echo $tpath; ?>/css/template.less" />
 	<script src="<?php echo $tpath; ?>/js/less.min.js" type="text/javascript"></script>
+	<!-- end Add Less -->
 
 </head>
   
