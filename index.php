@@ -21,7 +21,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 	<script type="text/javascript" src="<?php echo $tpath; ?>/js/respond.min.js"></script>
 	<![endif]-->
 
-	<!-- Add Less -->
+	<!-- Add Less.js -->
 	<link rel="stylesheet/less" type="text/css" href="<?php echo $tpath; ?>/css/template.less" />
 	<script src="<?php echo $tpath; ?>/js/less.min.js" type="text/javascript"></script>
 
@@ -29,10 +29,32 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
   
 <body class="<?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('site')).' '.$active->alias.' '.$pageclass; ?>" role="document">
 
-		<jdoc:include type="message" />
-		<jdoc:include type="component" />
+	<div class="container-fluid">
+
+		<div class="row">
+			<header class="col-md-12"><jdoc:include type="modules" name="header" style="xhtml" /></header>
+		</div> <!-- end row -->
+
+		<div class="row">
+			<nav class="col-md-12"><jdoc:include type="modules" name="menu" style="none" /></nav>
+		</div> <!-- end row -->
+
+		<div class="row">
+			<article class="col-md-8">
+				<jdoc:include type="message" />
+				<jdoc:include type="component" />
+			</article>
+			<aside class="col-md-4"><jdoc:include type="modules" name="right" style="xhtml" /></aside>
+		</div> <!-- end row -->
+
+		<div class="row">
+			<footer class="col-md-12"><jdoc:include type="modules" name="footer" style="xhtml" /></footer>
+		</div> <!-- end row -->
+
+	</div> <!-- end container -->
 
 	<jdoc:include type="modules" name="debug" />
+	
 </body>
 
 </html>

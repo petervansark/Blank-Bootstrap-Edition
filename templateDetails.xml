@@ -34,11 +34,11 @@
 		<filename>templateDetails.xml</filename>
 	</files>
 	
-	<positions><!-- TODO define the positions for modules here -->
-		<position>navbar</position>
-		<position>breadcrumbs</position>
-		<position>largebar</position>
-		<position>sidebar</position>
+	<positions><!-- define the positions for modules here -->
+		<position>header</position>
+		<position>menu</position>
+		<position>right</position>
+		<position>footer</position>
 		<position>debug</position>
 	</positions>
 	
